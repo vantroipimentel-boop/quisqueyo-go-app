@@ -1,23 +1,27 @@
 "use client";
+
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const router = useRouter();
 
   function handleLogin() {
     if (!email || !password) {
-      setError("Debes completar todos los campos");
+      alert("Por favor llena todos los campos");
       return;
     }
 
-    // Por ahora solo validamos que no esté vacío
-    window.location.href = "/dashboard";
+    // guardamos el email (temporalmente)
+    localStorage.setItem("userEmail", email);
+
+    router.push("/dashboard");
   }
 
   return (
-    <main style={{ padding: "40px", fontFamily: "Arial", maxWidth: "400px" }}>
+    <main style={{ padding: "40px", fontFamily: "Arial" }}>
       <h1>Iniciar sesión</h1>
 
       <input
@@ -25,7 +29,7 @@ export default function LoginPage() {
         placeholder="Correo"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        style={{ display: "block", marginBottom: "10px", padding: "8px", width: "100%" }}
+        style={{ display: "block", marginBottom: "10px", padding: "8px" }}
       />
 
       <input
@@ -33,20 +37,12 @@ export default function LoginPage() {
         placeholder="Contraseña"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        style={{ display: "block", marginBottom: "10px", padding: "8px", width: "100%" }}
+        style={{ display: "block", marginBottom: "10px", padding: "8px" }}
       />
 
-      {error && (
-        <p style={{ color: "red", marginBottom: "10px" }}>{error}</p>
-      )}
-
-      <button
-        onClick={handleLogin}
-        style={{ padding: "10px", width: "100%" }}
-      >
-        Entrar
-      </button>
+      <button onClick={handleLogin}>Entrar</button>
     </main>
   );
 }
+
 

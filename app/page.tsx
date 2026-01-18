@@ -1,12 +1,15 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main style={{ padding: "40px", fontFamily: "Arial" }}>
-      <h1>Quisqueya GO 🇩🇴</h1>
+      <h1>Quisqueya GO 🇩🇴 (v1)</h1>
+
       <p>Plataforma para dominicanos que quieren emigrar.</p>
 
-      <a href="/login">
+      <Link href="/login">
         <button>Iniciar sesión</button>
-      </a>
+      </Link>
     </main>
   );
 }
