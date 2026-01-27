@@ -17,8 +17,13 @@ export default function DashboardPage() {
     }
   }, [router]);
 
+  function handleLogout() {
+    localStorage.removeItem("userEmail");
+    router.push("/login");
+  }
+
   if (!email) {
-    return <p>Cargando...</p>;
+    return null; // evita parpadeos
   }
 
   return (
@@ -26,12 +31,7 @@ export default function DashboardPage() {
       <h1>Dashboard</h1>
       <p>Bienvenido: <strong>{email}</strong></p>
 
-      <button
-        onClick={() => {
-          localStorage.removeItem("userEmail");
-          router.push("/login");
-        }}
-      >
+      <button onClick={handleLogout}>
         Cerrar sesión
       </button>
     </main>
