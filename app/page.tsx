@@ -8,9 +8,9 @@ export default function Home() {
         Quisqueya GO 🇩🇴
       </h1>
 
-      <p className="text-lg text-gray-300 mb-8 text-center max-w-md">
-        Descubre el mejor país para emigrar en menos de 5 minutos.
-      </p>
+     <p className="text-lg text-gray-300 mb-8 text-center max-w-md">
+  Descubre a qué países puedes emigrar según tu perfil, requisitos reales y oportunidades disponibles.
+</p>
 
       <Link href="/login">
         <button className="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-lg text-white font-semibold">
