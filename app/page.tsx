@@ -12,11 +12,19 @@ export default function Home() {
   Descubre a qué países puedes emigrar según tu perfil, requisitos reales y oportunidades disponibles.
 </p>
 
-      <Link href="/login">
-        <button className="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-lg text-white font-semibold">
-          Empezar
-        </button>
-      </Link>
+<div className="flex gap-4">
+  <Link href="/login">
+    <button className="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-lg text-white font-semibold">
+      Iniciar sesión
+    </button>
+  </Link>
+
+  <Link href="/login">
+    <button className="border border-gray-500 hover:bg-gray-800 transition px-6 py-3 rounded-lg text-white font-semibold">
+      Crear cuenta
+    </button>
+  </Link>
+</div>
 
     </main>
   );
